@@ -66,6 +66,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Alcoholic Brands" id="WaK-eg-aE9"/>
                     <connections>
+                        <outlet property="searchBar" destination="VbW-fH-2pV" id="vlY-Qc-ktp"/>
                         <outlet property="tbView" destination="oqS-zA-Va2" id="vcc-71-LUo"/>
                     </connections>
                 </tableViewController>

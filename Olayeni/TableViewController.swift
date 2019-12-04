@@ -9,22 +9,51 @@
 import UIKit
 import CoreData
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, UISearchBarDelegate {
     
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var tbView: UITableView!
+    
+    var drinks: [Drink] = []
+    var searchedDrinks: [Drink] = []
+    
+    func capitalize(text: String) -> String  {
+        return text.prefix(1).uppercased() + text.dropFirst()
+    }
+    
     private var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
         configureFetchedResultsController()
+        drinks = fetchedResultsController?.fetchedObjects as! [Drink]
+        searchedDrinks = drinks
         tbView.dataSource = self
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    if searchText == ""{
+            searchedDrinks = drinks
+        }else{
+            searchedDrinks.removeAll()
+            for drink in  drinks{
+                if (drink.brand?.lowercased().contains(searchText.lowercased()))!{
+                    searchedDrinks.append(drink)
+                }
+            }
+        }
+        DispatchQueue.main.async{
+            self.tableView.reloadData()
+        }
     }
     
     private func configureFetchedResultsController(){
@@ -59,12 +88,13 @@ class TableViewController: UITableViewController {
      */
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sections = fetchedResultsController?.sections else {
-            return 0
-        }
-        
-        let rowCount = sections[section].numberOfObjects
-        print("THE AMOUNT OF ROWS IN THE SECTION ARE: \(rowCount)")
+//        guard let sections = fetchedResultsController?.sections else {
+//            return 0
+//        }
+//
+//        let rowCount = sections[section].numberOfObjects
+//        print("THE AMOUNT OF ROWS IN THE SECTION ARE: \(rowCount)")
+        let rowCount = searchedDrinks.count
         
         return rowCount
     }
@@ -73,7 +103,10 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "drinkCell", for: indexPath)
         
-        if let drink = fetchedResultsController?.object(at: indexPath) as? Drink{
+//        if let drink = fetchedResultsController?.object(at: indexPath) as? Drink{
+//            cell.textLabel?.text = drink.brand
+//        }
+        if let drink = searchedDrinks[indexPath.row] as? Drink{
             cell.textLabel?.text = drink.brand
         }
 

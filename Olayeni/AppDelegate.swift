@@ -48,6 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let backgroundContext = persistentContainer.newBackgroundContext()
             persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
             
+            
+            
+            
             backgroundContext.perform {
                 if let arrayContents = NSArray(contentsOf: urlPath) as? [[String:String]]{
                     
