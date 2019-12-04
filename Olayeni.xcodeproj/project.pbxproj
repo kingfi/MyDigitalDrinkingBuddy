@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		7C91A3CF239753EB003F0E7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91A3CE239753EB003F0E7D /* AppDelegate.swift */; };
 		7C91A3D1239753EB003F0E7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91A3D0239753EB003F0E7D /* SceneDelegate.swift */; };
-		7C91A3D3239753EB003F0E7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91A3D2239753EB003F0E7D /* ViewController.swift */; };
 		7C91A3D6239753EB003F0E7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C91A3D4239753EB003F0E7D /* Main.storyboard */; };
 		7C91A3D9239753EB003F0E7D /* Olayeni.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C91A3D7239753EB003F0E7D /* Olayeni.xcdatamodeld */; };
 		7C91A3DB239753EE003F0E7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C91A3DA239753EE003F0E7D /* Assets.xcassets */; };
 		7C91A3DE239753EE003F0E7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C91A3DC239753EE003F0E7D /* LaunchScreen.storyboard */; };
+		7C91A3E7239760DB003F0E7D /* AlcData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C91A3E6239760DB003F0E7D /* AlcData.plist */; };
+		7C91A3EA23979A86003F0E7D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91A3E923979A86003F0E7D /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7C91A3CB239753EB003F0E7D /* Olayeni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Olayeni.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C91A3CE239753EB003F0E7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C91A3D0239753EB003F0E7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7C91A3D2239753EB003F0E7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7C91A3D5239753EB003F0E7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7C91A3D8239753EB003F0E7D /* Olayeni.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Olayeni.xcdatamodel; sourceTree = "<group>"; };
 		7C91A3DA239753EE003F0E7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C91A3DD239753EE003F0E7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C91A3DF239753EE003F0E7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C91A3E6239760DB003F0E7D /* AlcData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AlcData.plist; path = Data/AlcData.plist; sourceTree = "<group>"; };
+		7C91A3E923979A86003F0E7D /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +62,13 @@
 			children = (
 				7C91A3CE239753EB003F0E7D /* AppDelegate.swift */,
 				7C91A3D0239753EB003F0E7D /* SceneDelegate.swift */,
-				7C91A3D2239753EB003F0E7D /* ViewController.swift */,
 				7C91A3D4239753EB003F0E7D /* Main.storyboard */,
 				7C91A3DA239753EE003F0E7D /* Assets.xcassets */,
+				7C91A3E6239760DB003F0E7D /* AlcData.plist */,
 				7C91A3DC239753EE003F0E7D /* LaunchScreen.storyboard */,
 				7C91A3DF239753EE003F0E7D /* Info.plist */,
 				7C91A3D7239753EB003F0E7D /* Olayeni.xcdatamodeld */,
+				7C91A3E923979A86003F0E7D /* TableViewController.swift */,
 			);
 			path = Olayeni;
 			sourceTree = "<group>";
@@ -129,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C91A3DE239753EE003F0E7D /* LaunchScreen.storyboard in Resources */,
+				7C91A3E7239760DB003F0E7D /* AlcData.plist in Resources */,
 				7C91A3DB239753EE003F0E7D /* Assets.xcassets in Resources */,
 				7C91A3D6239753EB003F0E7D /* Main.storyboard in Resources */,
 			);
@@ -141,10 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C91A3D3239753EB003F0E7D /* ViewController.swift in Sources */,
 				7C91A3D9239753EB003F0E7D /* Olayeni.xcdatamodeld in Sources */,
 				7C91A3CF239753EB003F0E7D /* AppDelegate.swift in Sources */,
 				7C91A3D1239753EB003F0E7D /* SceneDelegate.swift in Sources */,
+				7C91A3EA23979A86003F0E7D /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

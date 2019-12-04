@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        preloadData()
         return true
     }
 
@@ -31,6 +32,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    func preloadData(){
+        let preloadedDataKey = "didPreloadData"
+        
+        let defaults = UserDefaults.standard
+        
+        if defaults.bool(forKey: preloadedDataKey) == false{
+            //preload
+            guard let urlPath = Bundle.main.url(forResource: "AlcData", withExtension: "plist") else{
+                return
+                }
+            
+            let backgroundContext = persistentContainer.newBackgroundContext()
+            persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
+            
+            backgroundContext.perform {
+                if let arrayContents = NSArray(contentsOf: urlPath) as? [[String:String]]{
+                    
+                    do{
+                        for item in arrayContents{
+                            let drink = Drink(context: backgroundContext)
+                            drink.brand = item["brand"]!
+                            drink.aBV = Float(item["aBV"]!)!
+                            drink.type = item["type"]!
+                        }
+                        
+                        try backgroundContext.save()
+                        defaults.set(true, forKey: preloadedDataKey)
+                        
+                    }catch{
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }else{
+            print("DATA HAS ALREADY BEEN IMPORTED THERE IS NOTHING MORE TO DO HERE.")
+        }
+        
     }
 
     // MARK: - Core Data stack
