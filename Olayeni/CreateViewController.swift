@@ -26,7 +26,7 @@ class CreateViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
+    //create account with PFUser API
     @IBAction func onCreateAcct(_ sender: Any) {
         if passwordField.text == retypePasswordField.text{
             var user = PFUser()

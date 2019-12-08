@@ -25,7 +25,7 @@ class alcoholViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     
-    
+    //set labels
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,8 +36,9 @@ class alcoholViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
+    //Logs drinking events into drinking diary
     @IBAction func onLogIntoDiary(_ sender: Any) {
+        //creates a date and formats it
         let date = Date()
         let format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -45,6 +46,7 @@ class alcoholViewController: UIViewController {
         print(formattedDate)
         print(date)
         
+        //checks if serving has been filled and then logs diary entry with PFObject API
         if servingEntry.text == "" {
             let alert = UIAlertController(title: "No Input", message: "Must have input to add to diary.", preferredStyle: .alert)
 

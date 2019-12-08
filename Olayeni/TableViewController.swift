@@ -40,7 +40,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
+    //a search bar implementation to search for drinks
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     if searchText == ""{
             searchedDrinks = drinks
@@ -56,7 +56,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
             self.tableView.reloadData()
         }
     }
-    
+    //function to get data from Core Data
     private func configureFetchedResultsController(){
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
@@ -87,7 +87,9 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         return 0
     }
      */
-
+    
+    
+    //display the drinks
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        guard let sections = fetchedResultsController?.sections else {
 //            return 0
@@ -116,8 +118,17 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         return cell
     }
     
+    //logout implementation
     @IBAction func onLogout(_ sender: Any) {
         PFUser.logOut()
+        
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: "username")
+        defaults.removeObject(forKey: "objectId")
+        defaults.removeObject(forKey: "gender")
+        defaults.removeObject(forKey: "weight")
+        defaults.synchronize()
+        
         
         let main = UIStoryboard(name: "Main", bundle: nil)
         let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
@@ -125,7 +136,7 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         delegate.window?.rootViewController = loginViewController
     }
     
-    
+    //segue to alcoholViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "alcoholSegue" {
             if let destination = segue.destination as? alcoholViewController {

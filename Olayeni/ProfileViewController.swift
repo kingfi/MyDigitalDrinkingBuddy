@@ -17,7 +17,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var bacLabel: UILabel!
     let defaults = UserDefaults.standard
 
-    
+    //show profile informtion based on current user data collected in Userdefaults at login
     override func viewDidLoad() {
         super.viewDidLoad()
         

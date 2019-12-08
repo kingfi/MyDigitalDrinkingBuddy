@@ -37,6 +37,7 @@ class DiaryViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    //gets list of entries associated with user using PFQuery API
     @objc func getEntries(){
         self.entries.removeAll()
         let query = PFQuery(className:"DiaryEntries")
@@ -66,6 +67,7 @@ class DiaryViewController: UITableViewController {
 //        return 0
 //    }
 
+    //displays diary entries in table format
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         print("count: ")
