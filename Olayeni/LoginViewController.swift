@@ -67,6 +67,11 @@ class LoginViewController: UIViewController {
             }
             else{
                 print("Error: \(error?.localizedDescription)")
+                let alert = UIAlertController(title: "Login Unsuccessful", message: "Incorrect username/password", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+
+                self.present(alert, animated: true)
             }
         }
         

@@ -80,7 +80,7 @@ class DiaryViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "diaryCell", for: indexPath)
 
          //Configure the cell...
-        if let entry = entries[indexPath.row] as? PFObject{
+        if let entry = entries[entries.count-indexPath.row-1] as? PFObject{
             let brand = entry["brand"] as! String
             let amount = entry["amt"] as! String
             let date = entry["date"] as! String

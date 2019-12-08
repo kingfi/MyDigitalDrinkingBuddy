@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7C91A3CB239753EB003F0E7D /* Olayeni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Olayeni.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C91A3CB239753EB003F0E7D /* My Digital Drinking Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Digital Drinking Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C91A3CE239753EB003F0E7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C91A3D0239753EB003F0E7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7C91A3D5239753EB003F0E7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,6 +39,8 @@
 		7C91A3EF2399F55A003F0E7D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7C91A3F1239B3121003F0E7D /* alcoholViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alcoholViewController.swift; sourceTree = "<group>"; };
 		7C91A3F5239B4F03003F0E7D /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
+		7C91A3F9239D98C2003F0E7D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7C91A3FA239DA315003F0E7D /* DESIGN.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DESIGN.md; sourceTree = "<group>"; };
 		993CAF60A42CDC9CA7C9F09D /* Pods_Olayeni.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Olayeni.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A943D59A8710D3A5C1F26058 /* Pods-Olayeni.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Olayeni.debug.xcconfig"; path = "Target Support Files/Pods-Olayeni/Pods-Olayeni.debug.xcconfig"; sourceTree = "<group>"; };
 		FF1BF15D385B395EBA29A5E1 /* Pods-Olayeni.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Olayeni.release.xcconfig"; path = "Target Support Files/Pods-Olayeni/Pods-Olayeni.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,7 +79,7 @@
 		7C91A3CC239753EB003F0E7D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7C91A3CB239753EB003F0E7D /* Olayeni.app */,
+				7C91A3CB239753EB003F0E7D /* My Digital Drinking Buddy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +101,8 @@
 				7C91A3EF2399F55A003F0E7D /* ProfileViewController.swift */,
 				7C91A3F1239B3121003F0E7D /* alcoholViewController.swift */,
 				7C91A3F5239B4F03003F0E7D /* DiaryViewController.swift */,
+				7C91A3F9239D98C2003F0E7D /* README.md */,
+				7C91A3FA239DA315003F0E7D /* DESIGN.md */,
 			);
 			path = Olayeni;
 			sourceTree = "<group>";
@@ -131,7 +135,7 @@
 			);
 			name = Olayeni;
 			productName = Olayeni;
-			productReference = 7C91A3CB239753EB003F0E7D /* Olayeni.app */;
+			productReference = 7C91A3CB239753EB003F0E7D /* My Digital Drinking Buddy.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -389,7 +393,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kingfi.Olayeni;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "My Digital Drinking Buddy";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -408,7 +412,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kingfi.Olayeni;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "My Digital Drinking Buddy";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
