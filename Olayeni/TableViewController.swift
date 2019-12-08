@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Parse
 
 class TableViewController: UITableViewController, UISearchBarDelegate {
     
@@ -115,7 +116,24 @@ class TableViewController: UITableViewController, UISearchBarDelegate {
         return cell
     }
     
-
+    @IBAction func onLogout(_ sender: Any) {
+        PFUser.logOut()
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+        let delegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+        delegate.window?.rootViewController = loginViewController
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "alcoholSegue" {
+            if let destination = segue.destination as? alcoholViewController {
+                destination.drink = searchedDrinks[tableView.indexPathForSelectedRow!.row]
+                
+            }
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -168,3 +186,5 @@ extension TableViewController: NSFetchedResultsControllerDelegate {
         tbView.reloadData()
     }
 }
+
+
